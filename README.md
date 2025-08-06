@@ -10,8 +10,15 @@ M5GFX内でM5の基盤を自動認識してくれるはずなので、M5StickC P
 * [M5GFX](https://github.com/m5stack/M5GFX) v0.2.9
 * [M5Unified](https://github.com/m5stack/M5Unified) v0.2.7
 
-# How to build
-WIP...
+# [WIP]How to use
+1. このリポジトリをgit cloneして、VSCodeで開きます
+2. 特定のフォルダにgit cloneでarduiono-esp32、M5GFX、M5Unifiedを配置します
+3. CMakeLists.txtのEXTRA_COMPONENT_DIRSに1のフォルダを設定します
+4. ctr + shift + pを押してESP-IDF: Open ESP-IDF Terminalを選択します
+5. idf.py menuconfigの実行。おそらく失敗しますが、sdkconfigが生成されるので、CONFIG_FREERTOS_HZを100から1000に直接ファイルを開いて修正します
+6. idf.py menuconfigの実行。今度はうまくいくので、Arduiono Configuration -> Autostart Arduino setup and loop on boot をチェックします
+7. idf.py build
+8. idf.py flash monitor
 
 # 注意
 main/CMakeList.txtを見てもらうとわかりますが、PRIV_REQUIRESにarduiono-esp32を含めていません。
